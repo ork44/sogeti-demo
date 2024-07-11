@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing Claim - Oranje Insurance</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+        }
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            margin-bottom: 20px;
+        }
+        .success {
+            color: green;
+            font-size: 1.5rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="processing">
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Processing...</span>
+            </div>
+            <p>Processing your claim, please wait...</p>
+        </div>
+        <div class="success">
+            <p>Claim Submitted!</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        // Simulate processing time and then show success message
+        setTimeout(function() {
+            document.querySelector('.processing').style.display = 'none';
+            document.querySelector('.success').style.display = 'block';
+        }, 3000); // 3 seconds delay for demo purposes
+    </script>
+</body>
+</html>

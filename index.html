@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orangje Insurance - Claim Administration</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,13 +14,25 @@
             padding: 0;
         }
         .container {
-            width: 50%;
+            width: 80%;
             margin: auto;
             background-color: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             margin-top: 50px;
+            display: flex;
+        }
+        .form-container {
+            width: 60%;
+            margin-right: 5%;
+        }
+        .info-container {
+            width: 35%;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .header {
             display: flex;
@@ -59,33 +73,54 @@
         button:hover {
             background-color: #e04300;
         }
+        .info-box img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .info-box p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .info-box .important-info {
+            color: red;
+            font-weight: bold;
+        }
+        .policies {
+            margin-top: 20px;
+        }
+        .policies h3 {
+            margin-top: 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <img src="logo.png" alt="Orangje Insurance Logo">
-            <h1>Oranje Insurance - Claim Administration</h1>
-        </div>
-        <form action="#" method="post">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" value="Incident Report: Car Crash on Dutch A2" required>
+        <div class="form-container">
+            <div class="header">
+                <img src="logo.png" alt="Orangje Insurance Logo">
+                <h1>Oranje Insurance - Claim Administration</h1>
+            </div>
+            <form action="processing.html" method="post">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" value="Incident Report: Car Crash on Dutch A2" required>
 
-            <label for="customer-number">Customer Number</label>
-            <input type="text" id="customer-number" name="customer-number" value="266383" required>
+                <label for="customer-number">Customer Number</label>
+                <input type="text" id="customer-number" name="customer-number" value="266383" required>
 
-            <label for="more-info">More Information</label>
-            <textarea id="more-info" name="more-info" rows="20" required>
-
+                <label for="more-info">More Information</label>
+                <textarea id="more-info" name="more-info" rows="20" required>
 Date of Incident: 10-07-2024
 Time of Incident: 14:40
 
-Policyholder: Giovanni Narain
+Policyholder: Michael Henkelman
 
 Summary of Incident:
 
 Location: A2 Highway, Milemarker 12.4, Netherlands
-Description: Volkswagen Polo, licance plate  PL-12-TK.
+Description: Volkswagen Polo, license plate PL-12-TK.
 Injuries: None reported
 
 Details:
@@ -103,16 +138,36 @@ Process claim for €2000 in damages.
 Remarks:
 -
 
-
-Handled By: Johan de Wit
+Handled By: Thijmen van der Put
 Date Logged: 10-07-2024
-            </textarea>
+                </textarea>
 
-            <label for="damage">Damage</label>
-            <input type="text" id="damage" name="damage" value="TBD" required>
+                <label for="damage">Damage</label>
+                <input type="text" id="damage" name="damage" value="TBD" required>
 
-            <button type="submit">Submit Claim</button>
-        </form>
+                <button type="submit">Submit Claim</button>
+            </form>
+        </div>
+        <div class="info-container">
+            <div class="info-box">
+                <img src="person.png" alt="Customer Photo">
+                <p><strong>Name:</strong> Michael Henkelman</p>
+                <p><strong>Age:</strong> 29</p>
+                <p><strong>Address:</strong> 2842 TZ Torenstraat, Woensel, Netherlands</p>
+                <p><strong>Customer since:</strong> 2015 - 9 years</p>
+                <!-- <p class="important-info">Important: Please verify the customer's phone number and email address for further communication.</p> -->
+            </div>
+            <div class="policies">
+                <h3>Policies:</h3>
+                <button type="button" class="btn btn-primary btn-lg btn-block">Car Insurance - Comprehensive</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block">Home Insurance</button>
+            </div>
+        </div>
     </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>
